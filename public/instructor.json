@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Chris Brickley",
+        "email": "chris_brickley@gmail.com",
+        "instructorImage": "https://i.ibb.co/x2Md3v1/Chris-Brickley-2.png",
+        "role": "instructor"
+    },
+    {
+        "name": "Fabiano Caruana",
+        "email": "fabiano_caruana@gmail.com",
+        "instructorImage": "https://i.ibb.co/273qqvq/640px-Fabiano-Caruana-2013-2.jpg",
+        "role": "instructor"
+    }
+  ]

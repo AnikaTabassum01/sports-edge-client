@@ -4,6 +4,10 @@ import {
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
+import SignUp from "../Pages/SignUp/SignUp";
+import Dashboard from "../Layout/Dashboard";
+import AddClass from "../Pages/Dashboard/AddClass/AddClass";
+import Instructors from "../Pages/Instructors/Instructors";
 
  
   export const router = createBrowserRouter([
@@ -18,7 +22,25 @@ import Login from "../Pages/Login/Login";
         {
             path: 'login',
             element: <Login></Login>
+        },
+        {
+            path: 'signup',
+            element: <SignUp></SignUp>
+        },
+        {
+            path: 'instructors',
+            element: <Instructors></Instructors>
         }
       ]
     },
+    {
+      path: 'dashboard',
+      element: <Dashboard></Dashboard>,
+      children: [
+        {
+          path: 'addClass',
+          element: <AddClass></AddClass>
+        }
+      ]
+    }
   ]);
