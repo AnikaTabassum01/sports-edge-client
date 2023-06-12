@@ -19,7 +19,7 @@ const Instructors = () => {
                             <figure><img className='group-hover:scale-110' src={instructor.instructorImage} alt={instructor.name} /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">{instructor.name}</h2>
-                                <p className='font-semibold'>Email: <span className='font-normal'>{instructor.email}</span></p>
+                                <p className='font-semibold'>Email: <span className='font-normal'>{instructor.instructorEmail}</span></p>
                             </div>
                         </div>)
                 }

@@ -2,7 +2,9 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
+import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2'
+
 
 
 const SignUp = () => {
@@ -40,6 +42,11 @@ const SignUp = () => {
     };
 
     return (
+        <>
+        <Helmet>
+            <title>SportsEdge | Signup</title>
+        </Helmet>
+
         <div className='my-10 mx-auto w-2/3 md:w-1/3 bg-gray-200 p-10 shadow-2xl rounded-lg flex flex-col'>
 
             <p className='text-3xl font-bold text-center mb-7'>Sign up</p>
@@ -97,6 +104,7 @@ const SignUp = () => {
             <div className='divider'>Or</div>
             <div className='cursor-pointer flex items-center justify-evenly w-full py-3 px-2 md:px-10 mx-auto border-2 mt-3 border-gray-500 rounded-full'><p className='font-bold md:text-xl text-center'>Sign in with Google</p></div>
         </div>
+        </>
     );
 };
 

@@ -7,13 +7,16 @@ import { useLocation, useNavigate } from "react-router-dom";
 const Classes = () => {
     const [classes, setClasses] = useState([]);
     const { user } = useContext(AuthContext);
+
+    console.log(user);
+    
     const navigate = useNavigate();
     const location = useLocation();
 
     const handleSelect = (singleClass) => {
         console.log(singleClass);
-        if (user && user.email) {
-            const selectedItem = {selectedId: _id, price, email: user.email}
+        if (user & user.email) {
+            const selectedItem = { singleClass, email: user.email, classId: singleClass._id }
             fetch('http://localhost:5000/selectedClass', {
                 method: 'POST',
                 headers: {
@@ -45,7 +48,7 @@ const Classes = () => {
                 confirmButtonText: 'Login now!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    navigate('/login')
+                    navigate('/login', {state: {from: location}})
                 }
             })
         }
@@ -56,6 +59,8 @@ const Classes = () => {
             .then(res => res.json())
             .then(data => setClasses(data))
     }, [])
+
+
     return (
         <div className='w-11/12 px-10 mx-auto'>
             <p className='text-3xl font-bold my-5 text-center'>All Instructors </p>
