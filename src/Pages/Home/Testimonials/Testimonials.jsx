@@ -19,13 +19,13 @@ const Testimonials = () => {
 
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('reviews.json')
+        fetch('http://localhost:5000/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
     return (
         <div>
-            <div className='text-4xl font-bold text-orange-500 text-center my-16'>
+            <div className='text-4xl font-bold text-orange-500 text-center mt-16 mb-8'>
                 <h2>--- Testimonials & Reviews ---</h2>
             </div>
             <div>
@@ -49,11 +49,12 @@ const Testimonials = () => {
                         {
                             reviews.map(review => <SwiperSlide
                             key={review._id}
-                            >
-                                <div>
-                                    <img className='h-20' src="https://i.ibb.co/7yzmKY1/image-asset.png" alt="" />
-                                    <div>
-                                    <p className='text-xl'>{review.details}</p>
+                            >   <img className='ml-36 h-[400px] w-[1000px]' src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/9/a/a/9aa041e93f971ba830b5b05619a7527bc52cab2c.gif" alt="" />
+                                <div className='flex mx-56 -mt-72'>
+                                    <img className='h-52 mr-8 pt-16' src={review.photo} alt="" />
+                                    <div className='pt-20'>
+                                    <p className='text-xl text-orange-500'>{review.details}</p>
+                                    <p className='text-xl font-bold text-orange-700'>-- {review.name}</p>
                                     </div>
                                 </div>
 

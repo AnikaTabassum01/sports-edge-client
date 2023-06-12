@@ -17,8 +17,7 @@ const SignUp = () => {
     const onSubmit = data => {
         console.log(data)
         createUser(data.email, data.password)
-        .then(result => {
-                
+        .then(result => {                
             const loggedUser = result.user;
             console.log(loggedUser);
             updateUserProfile(data.name, data.photoURL)
@@ -49,7 +48,7 @@ const SignUp = () => {
 
         <div className='my-10 mx-auto w-2/3 md:w-1/3 bg-gray-200 p-10 shadow-2xl rounded-lg flex flex-col'>
 
-            <p className='text-3xl font-bold text-center mb-7'>Sign up</p>
+            <p className='text-3xl font-bold text-center'>Sign up</p>
 
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                             <div className="form-control">
@@ -70,7 +69,7 @@ const SignUp = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email"  {...register("email", { required: true })} name="email" placeholder="email" className="input input-bordered" />
+                                <input type="email"  {...register("email", { required: true })} name="email" placeholder="Email" className="input input-bordered" />
                                 {errors.email && <span className="text-red-600">Email is required</span>}
                             </div>
                             <div className="form-control">
@@ -82,7 +81,7 @@ const SignUp = () => {
                                     minLength: 6,
                                     maxLength: 20,
                                     pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
-                                })} placeholder="password" className="input input-bordered" />
+                                })} placeholder="Password" className="input input-bordered" />
                                 {errors.password?.type === 'required' && <p className="text-red-600">Password is required</p>}
                                 {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
                                 {errors.password?.type === 'maxLength' && <p className="text-red-600">Password must be less than 20 characters</p>}
@@ -92,10 +91,10 @@ const SignUp = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <input className="btn btn-primary" type="submit" value="Sign Up" />
+                                <input className="btn btn-primary normal-case text-white text-xl" type="submit" value="Sign Up" />
                             </div>
                         </form>
-                        <p><small>Already have an account <Link to="/login">Login</Link></small></p>
+                        <p className="pl-9"><small>Already have an account <Link className="text-blue-700 font-bold" to="/login">Login</Link></small></p>
 
 
 

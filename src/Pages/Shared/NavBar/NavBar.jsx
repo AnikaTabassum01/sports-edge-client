@@ -2,6 +2,7 @@ import { AuthContext } from "../../../Providers/AuthProvider/AuthProvider";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { BiSelectMultiple } from 'react-icons/bi';
+import { FaUser } from 'react-icons/fa';
 
 
 const NavBar = () => {
@@ -14,11 +15,6 @@ const NavBar = () => {
             .catch(error => console.log(error));
     }
 
-    //  const handleLogOut = () => {
-    //     logOut()
-    //     .then(() = > { })
-    //     .catch(error => console.log(error));
-    //  } 
 
     const navOptions = <>
         <li><Link to='/'>Home</Link></li>
@@ -27,19 +23,17 @@ const NavBar = () => {
         <li><Link to='/dashboard'>Dashboard</Link></li>
         <li><Link to='/'>
 
-            <button className="btn btn-outline">
-                <BiSelectMultiple></BiSelectMultiple>
+            <button className="">
                 <div className="badge badge-secondary">+0</div>
             </button>
         </Link></li>
-
-
-
-
+        {
+            user?.photoURL ? <img className='w-10 h-10 mt-2 mx-4 rounded-full' src={user?.photoURL} alt="" /> : <FaUser className='h-5 w-5'></FaUser>
+        }
 
         {
             user ? <>
-                <button onClick={handleLogOut} className="btn btn-active btn-ghost">Log out</button>
+                <button onClick={handleLogOut} className="btn btn-active btn-ghost normal-case text-xl">Log out</button>
             </> : <>
                 <li><Link to='/login'>Login</Link></li> </>
         }
@@ -59,17 +53,16 @@ const NavBar = () => {
                     </div>
                     <div className="flex ml-4">
                         <img className="h-20" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Icons8_flat_sports_mode.svg/1024px-Icons8_flat_sports_mode.svg.png" alt="" />
-                    <h2 className="font-bold text-orange-500 normal-case text-5xl mt-2">Sports Edge</h2>
+                        <h2 className="font-bold text-orange-500 normal-case text-5xl mt-2">Sports Edge</h2>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 text-xl text-orange-600">
+                    <ul className="menu menu-horizontal font-bold text-xl text-orange-600">
                         {navOptions}
                     </ul>
                 </div>
-                {/* <div className="navbar-end">
-                   
-                </div> */}
+
+
             </div>
         </>
     );
