@@ -1,6 +1,7 @@
 import { AuthContext } from "../../../Providers/AuthProvider/AuthProvider";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { BiSelectMultiple } from 'react-icons/bi';
 
 
 const NavBar = () => {
@@ -21,10 +22,18 @@ const NavBar = () => {
 
     const navOptions = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/courses'>Courses</Link></li>
+        <li><Link to='/classes'>Courses</Link></li>
         <li><Link to='/instructors'>Instructors</Link></li>
         <li><Link to='/dashboard'>Dashboard</Link></li>
-        
+        <li><Link to='/'>
+
+            <button className="btn btn-outline">
+                <BiSelectMultiple></BiSelectMultiple>
+                <div className="badge badge-secondary">+0</div>
+            </button>
+        </Link></li>
+
+
 
 
 

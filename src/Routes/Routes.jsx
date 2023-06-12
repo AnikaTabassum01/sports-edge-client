@@ -8,6 +8,8 @@ import SignUp from "../Pages/SignUp/SignUp";
 import Dashboard from "../Layout/Dashboard";
 import AddClass from "../Pages/Dashboard/AddClass/AddClass";
 import Instructors from "../Pages/Instructors/Instructors";
+import Classes from "../Pages/Classes/Classes";
+import ErrorPage from "../Pages/Shared/ErrorPage/ErrorPage";
 
  
   export const router = createBrowserRouter([
@@ -30,6 +32,10 @@ import Instructors from "../Pages/Instructors/Instructors";
         {
             path: 'instructors',
             element: <Instructors></Instructors>
+        },
+        {
+            path: 'classes',
+            element: <Classes></Classes>
         }
       ]
     },
@@ -42,5 +48,9 @@ import Instructors from "../Pages/Instructors/Instructors";
           element: <AddClass></AddClass>
         }
       ]
-    }
+    },
+    {
+      path: '*',
+      element: <ErrorPage></ErrorPage>
+  }
   ]);
