@@ -3,21 +3,22 @@ import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from 'react-helmet-async';
+import useSelectClass from "../../Hooks/useSelectClass/useSelectClass";
 
 
 const Classes = () => {
     const [classes, setClasses] = useState([]);
-    const { user } = useContext(AuthContext);
-
-    console.log(user);
-    
+    const { user } = useContext(AuthContext); 
+    const [, refetch] = useSelectClass();   
     const navigate = useNavigate();
     const location = useLocation();
 
+    // console.log(user);
+
     const handleSelect = (singleClass) => {
-        console.log(singleClass);
-        if (user & user.email) {
-            const selectedItem = { singleClass, email: user.email, classId: singleClass._id }
+        
+        if (user && user.email) {  
+                const selectedItem = { singleClass, email: user.email, classId: singleClass._id, className: singleClass.className, classImage: singleClass.classImage, instructorName: singleClass.instructorName, instructorEmail: singleClass.instructorEmail, price: singleClass.price, seats: singleClass.seats  }          
             fetch('http://localhost:5000/selectedClass', {
                 method: 'POST',
                 headers: {
@@ -27,11 +28,12 @@ const Classes = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    if (data.insertedId) {
+                    if(data.insertedId) {
+                        refetch();
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
-                            title: 'Your work has been saved',
+                            title: 'Class Selected Successfully',
                             showConfirmButton: false,
                             timer: 1500
                         })
@@ -41,7 +43,6 @@ const Classes = () => {
         else {
             Swal.fire({
                 title: 'Please login to select class',
-                text: "You won't be able to revert this!",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
@@ -93,3 +94,30 @@ const Classes = () => {
 };
 
 export default Classes;
+
+
+// if (user & user.email) {
+//     const selectedItem = { singleClass, email: user.email, classId: singleClass._id }
+//     fetch('http://localhost:5000/selectedClass', {
+//         method: 'POST',
+//         headers: {
+//             'content-type': 'application/json'
+//         },
+//         body: JSON.stringify(selectedItem)
+//     })
+//         .then(res => res.json())
+//         .then(data => {
+//             if(data.insertedId) {
+//                 Swal.fire({
+//                     position: 'top-end',
+//                     icon: 'success',
+//                     title: 'Your work has been saved',
+//                     showConfirmButton: false,
+//                     timer: 1500
+//                 })
+//             }
+//         })
+
+// if (user && user.email) {  
+//     const selectedItem = { singleClass, email: user.email, classId: singleClass._id, className: singleClass.className, classImage: singleClass.classImage, instructorName: singleClass.instructorName, instructorEmail: singleClass.instructorEmail, price: singleClass.price, seats: singleClass.seats  } 
+// }

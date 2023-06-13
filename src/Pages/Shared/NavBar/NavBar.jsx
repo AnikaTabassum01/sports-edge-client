@@ -3,11 +3,13 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { BiSelectMultiple } from 'react-icons/bi';
 import { FaUser } from 'react-icons/fa';
+import useSelectClass from "../../../Hooks/useSelectClass/useSelectClass";
 
 
 const NavBar = () => {
 
     const { user, logOut } = useContext(AuthContext);
+    const [selectClass] = useSelectClass();
 
     const handleLogOut = () => {
         logOut()
@@ -24,7 +26,7 @@ const NavBar = () => {
         <li><Link to='/'>
 
             <button className="">
-                <div className="badge badge-secondary">+0</div>
+                <Link to='/dashboard'><div className="badge badge-secondary">+{selectClass?.length || 0}</div></Link>
             </button>
         </Link></li>
         {
