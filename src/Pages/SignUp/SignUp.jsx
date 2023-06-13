@@ -39,6 +39,7 @@ const SignUp = () => {
             
 
     };
+   
 
     return (
         <>
@@ -96,12 +97,6 @@ const SignUp = () => {
                         </form>
                         <p className="pl-9"><small>Already have an account <Link className="text-blue-700 font-bold" to="/login">Login</Link></small></p>
 
-
-
-
-           
-            <div className='divider'>Or</div>
-            <div className='cursor-pointer flex items-center justify-evenly w-full py-3 px-2 md:px-10 mx-auto border-2 mt-3 border-gray-500 rounded-full'><p className='font-bold md:text-xl text-center'>Sign in with Google</p></div>
         </div>
         </>
     );

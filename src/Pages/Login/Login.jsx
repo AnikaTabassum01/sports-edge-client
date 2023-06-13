@@ -4,12 +4,13 @@ import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import { FcGoogle } from 'react-icons/fc';
 
 const Login = () => {
 
     const { register, formState: { errors } } = useForm();
 
-    const { signIn } = useContext(AuthContext);
+    const { signIn, googleSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -38,6 +39,14 @@ const Login = () => {
                 navigate(from, { replace: true });
             })
     }
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                const loggedInUser = result.user;
+                console.log(loggedInUser);
+                navigate(from, { replace: true });
+            })
+    }
 
     return (
 
@@ -45,6 +54,7 @@ const Login = () => {
             <Helmet>
                 <title>SportsEdge | Login</title>
             </Helmet>
+
             <div className='my-10 mx-auto w-2/3 md:w-1/3 bg-gray-200 p-10 shadow-2xl rounded-lg flex flex-col'>
 
                 <p className='text-3xl font-bold text-center mb-7'>Log in...</p>
@@ -63,10 +73,11 @@ const Login = () => {
                     <button type='submit' className='text-xl btn  btn-primary font-bold normal-case'>Log in</button>
                 </form>
                 <div className='divider'>Or</div>
-                <div className='cursor-pointer flex items-center justify-evenly w-full py-3 px-2 md:px-10 mx-auto border-2 mt-3 border-gray-500 rounded-full'><p className='font-bold md:text-xl text-center'>Sign in with Google</p></div>
+                <div className='cursor-pointer flex items-center justify-evenly w-full py-3 px-2 md:px-10 mx-auto border-2 mt-3 border-gray-500 rounded-full '><button onClick={handleGoogleSignIn} className='font-bold md:text-xl text-center flex'> <FcGoogle className="mr-4 h-8 w-8"></FcGoogle> Sign in with Google</button></div>
+                
             </div>
-            </>
-            );
+        </>
+    );
 };
 
-            export default Login;
+export default Login;

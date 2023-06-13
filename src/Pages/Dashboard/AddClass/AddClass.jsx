@@ -13,7 +13,7 @@ const AddClass = () => {
 
         
         const formData = new FormData();
-        formData.append('image', data.image[0])
+        formData.append('image', data.formData[0])
 
         fetch(img_hosting_url, {
             method: 'POST',
@@ -22,12 +22,12 @@ const AddClass = () => {
             .then(res => res.json())
             .then(imgResponse => {
                 console.log(imgResponse)
-                // if (imgResponse.success) {
-                //     const imgUrl = imgResponse.data.display_url;
-                //     const { className, instructorName, seats, price } = data;
-                //     const allClass = { className, classImage:imgUrl, instructorName, seats, price: parseFloat(price) };
-                //     console.log(allClass);
-                // }
+                if (imgResponse.success) {
+                    const imgUrl = imgResponse.data.display_url;
+                    const { className, instructorName, seats, price } = data;
+                    const allClass = { className, classImage:imgUrl, instructorName, seats, price: parseFloat(price) };
+                    console.log(allClass);
+                }
             })
 
     };

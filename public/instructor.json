@@ -1,14 +1,26 @@
 [
     {
-        "name": "Chris Brickley",
-        "email": "chris_brickley@gmail.com",
-        "instructorImage": "https://i.ibb.co/x2Md3v1/Chris-Brickley-2.png",
+        "name": "Julee Peck",
+        "email": "julee_peck@gmail.com",
+        "instructorImage": "https://i.ibb.co/JtcgNVh/instructor1.png",
         "role": "instructor"
     },
     {
-        "name": "Fabiano Caruana",
-        "email": "fabiano_caruana@gmail.com",
-        "instructorImage": "https://i.ibb.co/273qqvq/640px-Fabiano-Caruana-2013-2.jpg",
+        "name": "Boris Beckera",
+        "email": "boris_becker@gmail.com",
+        "instructorImage": "https://i.ibb.co/z7d4Qm7/images-q-tbn-ANd9-Gc-Q-3v-Jz-Vp-LDTesoeg-Hu3-XWpvm-W5y-GLh-Vbh-Iqw-usqp-CAU.jpg",
+        "role": "instructor"
+    },
+    {
+        "name": "Eteri Tutberidze",
+        "email": "eteri_tutberidze@gmail.com",
+        "instructorImage": "https://i.ibb.co/NpwpLJt/images-q-tbn-ANd9-Gc-Sw-PEW4-Xuaq-Corh-FWgt-IQd-Ymg-V9-Kxu-Rrp-IUVl-LAd-X1-Bw-E7d-N0-Yf-Wfcua-Rv-VV6.jpg",
+        "role": "instructor"
+    },
+    {
+        "name": "Zak Wheeller",
+        "email": "zak_wheeller@gmail.com",
+        "instructorImage": "https://i.ibb.co/jzV3Bkv/images-q-tbn-ANd9-Gc-Qvo-U4-KWhiv-Wg-Vt-Cel-AHf7pc-Oo-K3-G17nawzw-usqp-CAU.jpg",
         "role": "instructor"
     }
   ]

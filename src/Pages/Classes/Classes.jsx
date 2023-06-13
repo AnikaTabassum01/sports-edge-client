@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 
 
 const Classes = () => {
@@ -62,6 +63,13 @@ const Classes = () => {
 
 
     return (
+
+        <>
+        <Helmet>
+            <title>SportsEdge | Classes</title>
+        </Helmet>
+       
+
         <div className='w-11/12 px-10 mx-auto'>
             <p className='text-3xl font-bold my-5 text-center'>All Instructors </p>
             <div className='grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-5 mx-auto'>
@@ -80,6 +88,7 @@ const Classes = () => {
                 }
             </div>
         </div>
+        </>
     );
 };
 

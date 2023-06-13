@@ -28,7 +28,7 @@ const NavBar = () => {
             </button>
         </Link></li>
         {
-            user?.photoURL ? <img className='w-10 h-10 mt-2 mx-4 rounded-full' src={user?.photoURL} alt="" /> : <FaUser className='h-5 w-5'></FaUser>
+            user?.photoURL ? <img className='w-10 h-10 mt-2 mx-4 rounded-full' src={user?.photoURL} alt="" /> : <FaUser className='h-6 w-6'></FaUser>
         }
 
         {
