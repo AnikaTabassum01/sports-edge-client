@@ -12,7 +12,7 @@ const MySelectedClasses = () => {
 
     const total = selectClass.reduce((sum, item) => item.price + sum, 0)
 
-    const handleDelete = classes => {
+    const handleDelete = (id) => {
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -23,7 +23,7 @@ const MySelectedClasses = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/selectedClass/${classes._id}`, {
+                fetch(`http://localhost:5000/selectedClass/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -77,7 +77,7 @@ const MySelectedClasses = () => {
                                     <td>{classes?.singleClass?.instructorName}</td>
                                     <td>{classes?.singleClass?.seats}</td>
                                     <td>{classes?.singleClass?.price}</td>
-                                    <td className='flex justify-between mt-4'><button onClick={() => handleDelete(classes)} className='btn btn-error btn-sm'><FaTrashAlt></FaTrashAlt></button><Link to='/'><button className='btn  btn-success btn-sm ml-2'>pay</button></Link></td>
+                                    <td className='flex justify-between mt-4'><button onClick={() => handleDelete(classes?._id)} className='btn btn-error btn-sm'><FaTrashAlt></FaTrashAlt></button><Link to='/'><button className='btn  btn-success btn-sm ml-2'>pay</button></Link></td>
                                 </tr>)}
                         </tbody>
                     </table>

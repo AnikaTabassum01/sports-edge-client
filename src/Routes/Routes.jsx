@@ -11,6 +11,7 @@ import Instructors from "../Pages/Instructors/Instructors";
 import Classes from "../Pages/Classes/Classes";
 import ErrorPage from "../Pages/Shared/ErrorPage/ErrorPage";
 import MySelectedClasses from "../Pages/Dashboard/MySelectedClasses/MySelectedClasses";
+import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 
  
   export const router = createBrowserRouter([
@@ -47,6 +48,10 @@ import MySelectedClasses from "../Pages/Dashboard/MySelectedClasses/MySelectedCl
         {
           path: 'addClass',
           element: <AddClass></AddClass>
+        },
+        {
+          path: 'allUsers',
+          element: <AllUsers></AllUsers>
         },
         {
           path: 'mySelectedClasses',
