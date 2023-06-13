@@ -1,7 +1,6 @@
 import { AuthContext } from "../../../Providers/AuthProvider/AuthProvider";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { BiSelectMultiple } from 'react-icons/bi';
 import { FaUser } from 'react-icons/fa';
 import useSelectClass from "../../../Hooks/useSelectClass/useSelectClass";
 
@@ -26,7 +25,7 @@ const NavBar = () => {
         <li><Link to='/'>
 
             <button className="">
-                <Link to='/dashboard'><div className="badge badge-secondary">+{selectClass?.length || 0}</div></Link>
+                <Link to='/dashboard/mySelectedClasses'><div className="badge badge-secondary">+{selectClass?.length || 0}</div></Link>
             </button>
         </Link></li>
         {

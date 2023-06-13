@@ -10,6 +10,7 @@ import AddClass from "../Pages/Dashboard/AddClass/AddClass";
 import Instructors from "../Pages/Instructors/Instructors";
 import Classes from "../Pages/Classes/Classes";
 import ErrorPage from "../Pages/Shared/ErrorPage/ErrorPage";
+import MySelectedClasses from "../Pages/Dashboard/MySelectedClasses/MySelectedClasses";
 
  
   export const router = createBrowserRouter([
@@ -46,6 +47,10 @@ import ErrorPage from "../Pages/Shared/ErrorPage/ErrorPage";
         {
           path: 'addClass',
           element: <AddClass></AddClass>
+        },
+        {
+          path: 'mySelectedClasses',
+          element: <MySelectedClasses></MySelectedClasses>
         }
       ]
     },

@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { FaWallet, FaHome, FaUtensils, FaBook, FaUsers } from 'react-icons/fa';
+import { BiSelectMultiple } from 'react-icons/bi';
 
 
 const Dashboard = () => {
@@ -21,11 +22,7 @@ const Dashboard = () => {
                     <li><NavLink to="/dashboard/manageitems"><FaWallet></FaWallet> My Classes</NavLink></li>
                     <li><NavLink to="/"><FaBook></FaBook> Manage Classes</NavLink></li>
                     <li><NavLink to="/dashboard/allusers"><FaUsers></FaUsers> All Users</NavLink></li>
-
-
-
-
-
+                    <li><NavLink to="/dashboard/mySelectedClasses"><BiSelectMultiple></BiSelectMultiple> My Selected Classes</NavLink></li>
 
                     <div className="divider"></div>
                     <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
