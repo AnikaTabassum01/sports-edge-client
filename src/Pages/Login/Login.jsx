@@ -61,10 +61,7 @@ const Login = () => {
                         if (data.insertedId) {
 
                             const loggedInUser = result.user;
-                            console.log(loggedInUser);
-
-                            
-                   
+                            console.log(loggedInUser);                   
                         }    
                         navigate(from, { replace: true });                              
                          

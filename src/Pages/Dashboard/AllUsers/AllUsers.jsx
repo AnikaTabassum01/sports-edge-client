@@ -11,8 +11,8 @@ const AllUsers = () => {
         return res.json();
     })
 
-    const handleMakeAdmin = user => {
-        fetch(`https://sports-edge-server.vercel.app/users/admin/${user._id}`,{
+    const handleMakeAdmin = id => {
+        fetch(`https://sports-edge-server.vercel.app/users/admin/${id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -28,9 +28,7 @@ const AllUsers = () => {
         })
     }
 
-    const handleDelete = user => {
 
-    }
     return (
         <>
             <Helmet>
@@ -57,7 +55,7 @@ const AllUsers = () => {
                                 <th>{index+1}</th>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
-                                <td>{ user.role === 'admin' ? 'admin' : <button onClick={() => handleMakeAdmin(user)} className='btn btn-neutral text-white'><FaUserAlt className='w-5 h-5' /></button>}</td>
+                                <td>{ user.role === 'admin' ? 'admin' : <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-neutral text-white'><FaUserAlt className='w-5 h-5' /></button>}</td>
                                     <td><button className='btn btn-neutral text-white'><RiAdminFill className='w-5 h-5' /></button></td>
 
                             </tr>)
