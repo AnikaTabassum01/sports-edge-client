@@ -19,7 +19,7 @@ const Classes = () => {
         
         if (user && user.email) {  
                 const selectedItem = { singleClass, email: user.email, classId: singleClass._id, className: singleClass.className, classImage: singleClass.classImage, instructorName: singleClass.instructorName, instructorEmail: singleClass.instructorEmail, price: singleClass.price, seats: singleClass.seats  }          
-            fetch('http://localhost:5000/selectedClass', {
+            fetch('https://sports-edge-server.vercel.app/selectedClass', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -57,7 +57,7 @@ const Classes = () => {
     }
 
     useEffect(() => {
-        fetch('http://localhost:5000/allClasses')
+        fetch('https://sports-edge-server.vercel.app/allClasses')
             .then(res => res.json())
             .then(data => setClasses(data))
     }, [])
@@ -98,7 +98,7 @@ export default Classes;
 
 // if (user & user.email) {
 //     const selectedItem = { singleClass, email: user.email, classId: singleClass._id }
-//     fetch('http://localhost:5000/selectedClass', {
+//     fetch('https://sports-edge-server.vercel.app/selectedClass', {
 //         method: 'POST',
 //         headers: {
 //             'content-type': 'application/json'
