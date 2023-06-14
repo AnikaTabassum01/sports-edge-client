@@ -1,5 +1,4 @@
-## Website Name : 
-### Sports Edge
+## Website Name : Sports Edge
 
 ## Features : 
     * Anyone can register and explore the site 
