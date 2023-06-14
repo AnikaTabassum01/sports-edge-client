@@ -62,9 +62,11 @@ const Login = () => {
 
                             const loggedInUser = result.user;
                             console.log(loggedInUser);
-                            navigate(from, { replace: true });
+
+                            
                    
-                        }                                  
+                        }    
+                        navigate(from, { replace: true });                              
                          
                     
                     })
